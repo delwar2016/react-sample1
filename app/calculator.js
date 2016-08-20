@@ -29,7 +29,13 @@ var CalculatorClass = React.createClass({
     var result = 'N/A';
 
     if(objValid.isValid){
-      result = me.calculate();
+      if(e){
+        result = me.calculate();
+      }
+      else{
+        result = objValid.message;
+      }
+
     }
     else{
         result = objValid.message;
@@ -106,7 +112,7 @@ var CalculatorClass = React.createClass({
     <p>Enter Number 1 <input onChange={this.setNumber1} /></p>
     <p>Enter Number 2 <input  onChange={this.setNumber2}  /></p>
     <p>Operator <input  onChange={this.setOperator}  /></p>
-    <p><button >Calculate</button> <input value={this.state.text} readOnly  /></p>
+    <p><button onClick={this.setResult} >Calculate</button> <input value={this.state.text} readOnly  /></p>
     <p></p>
 
     </div>;
