@@ -4,8 +4,9 @@
 
 var CalculatorClass = React.createClass({
   getInitialState: function() {
-    return { text: 'N/A'};
+    return { result: 0};
   },
+
   setNumber1 : function(e){
     this.number1 = e.target.value;
     this.setResult();
@@ -41,7 +42,7 @@ var CalculatorClass = React.createClass({
         result = objValid.message;
     }
 
-    this.setState({text: result});
+    this.setState({result: result});
   },
 
 
@@ -108,14 +109,14 @@ var CalculatorClass = React.createClass({
     return result;
   },
   render: function() {
-    return  <div>
+    return  (<div>
     <p>Enter Number 1 <input onChange={this.setNumber1} /></p>
     <p>Enter Number 2 <input  onChange={this.setNumber2}  /></p>
     <p>Operator <input  onChange={this.setOperator}  /></p>
-    <p><button onClick={this.setResult} >Calculate</button> <input value={this.state.text} readOnly  /></p>
+    <p><button onClick={this.setResult} >Calculate</button> <input value={this.state.result}   /></p>
     <p></p>
 
-    </div>;
+    </div>);
   }
 });
 
