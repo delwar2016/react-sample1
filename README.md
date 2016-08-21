@@ -13,7 +13,7 @@ After that clone/download source code , you have to run bower install from publi
 
 Now, run the command from root folder : sudo npm install.
 
-then run: npm server.js
+then run: node server.js
 
 now type in your browser : http://localhost:3000/
 
